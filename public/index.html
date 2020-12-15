@@ -63,7 +63,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form id="form_submit">
+					<form method="post" action="/save_greeting" id="form_submit">
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Enter Name</label>
@@ -94,7 +94,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form id="form_edit">
+					<form  method="post" action="/edit_greeting" id="form_edit">
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Object Id</label>
@@ -131,7 +131,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form id="form_delete">
+					<form  method="post" action="/remove_greeting" id="form_delete">
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Object Id</label>
@@ -166,6 +166,6 @@
 			  
 			</div>
 		  </div>
-		  <script src="js/main.js"></script>
+		
     </body>
 </html>
