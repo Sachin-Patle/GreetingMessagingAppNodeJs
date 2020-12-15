@@ -1,0 +1,28 @@
+<div>
+    <a href="/getdetails">Get Details</a>
+    </div>
+    <hr>
+    
+    <% if(details!=null) { %>
+    <table>
+    <tr>
+        <th>Route</th>
+        <th>origin </th>
+        <th>Destination</th>
+        <th>EstimatedTimeOfArrival </th>
+        <th>Date </th>
+        <th>Time</th>
+    </tr>
+    <% details.forEach(function(item){ %>
+    <tr>
+        <td><%= item.route%></td>
+        <td><%= item.origin %></td>
+        <td><%= item.destination%></td>
+        <td><%= item.estimatedTimeOfArrival %></td>
+        <td><%= item.date%></td>
+        <td><%= item.time%></td>
+    
+    </tr>
+    <% }) %>
+    </table>
+    <% } %>
