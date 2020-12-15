@@ -1,0 +1,171 @@
+<html>
+    <head>
+		<title>Greeting Messaging App</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link href="css/main.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+
+		<!-- Modal fade-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<!-- Font Awesome-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script>
+			$( document ).ready(function() {
+				$('.leftmenutrigger').on('click', function(e) {
+				$('.side-nav').toggleClass("open");
+				e.preventDefault();
+				});
+			});
+		</script>
+	</head>
+	
+    <body>
+        <div id="wrapper" class="animate">
+			<nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+			  <span class="navbar-toggler-icon leftmenutrigger"></span>
+			  <a class="navbar-brand" href="#">Greeting Messaging App</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav animate side-nav">
+				  <li class="nav-item">
+					<a class="nav-link"><span class="fa fa-list"></span> List
+					  <span class="sr-only">(current)</span>
+					</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#submitModel"><span class="fa fa-calendar-plus-o"></span> Add New Greeting</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#editModel"><span class="fa fa-edit"></span> Edit</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="modal" data-target="#deleteModel"><span class="fa fa-trash"></span> Delete</a>
+				  </li>
+				</ul>
+				
+			  </div>
+			</nav>
+			<!-- submitModal -->
+			<div class="modal fade" id="submitModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add New Greeting</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form id="form_submit">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Enter Name</label>
+								<input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+							</div>
+							<div class="form-group">
+								<label>Enter Greeting Message</label>
+								<textarea class="form-control" name="message" cols="35" placeholder="Enter Greeting message here" required></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						<button type="submit" name="submitDetail" class="btn btn-primary"><i class="fa fa-check-circle"></i> Save</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+
+			<!-- editModal -->
+			<div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Edit Greeting Details</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form id="form_edit">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Object Id</label>
+								<input type="text" name="object_id" class="form-control" placeholder="Enter Object Id you want to update" required>
+							</div>
+							<div class="form-group">
+								<label>Enter Name</label>
+								<input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+							</div>
+							<div class="form-group">
+								<label>Enter Greeting Message</label>
+								<textarea class="form-control" name="message" cols="35" placeholder="Enter Greeting message here" required></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						<button type="submit" name="updateDetail" class="btn btn-success"><i class="fa fa-check-square"></i> Update</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+
+
+
+			<!-- deleteModal -->
+			<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Delete Greeting</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form id="form_delete">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Object Id</label>
+								<input type="text" name="object_id" class="form-control" placeholder="Enter Object Id you want to delete" required>
+							</div>
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						<button type="submit" name="deleteDetail" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+
+			<div class="container-fluid" >
+				  <div class="row" id="greeting_list">
+
+				  <!-- <div class="col-sm-4">
+					<div class="card">
+					  <div class="card-body">
+						<p class="card-subtitle mb-2 text-muted">Welcome to node js... We're going to create an App</p>
+						<p class="card-text">-Tony Stark</p>
+						<hr>
+						<p class="card-text">-15 min ago</p>
+					  </div>
+					</div> -->
+				  </div>
+				
+			  </div>
+			  
+			</div>
+		  </div>
+		  <script src="js/main.js"></script>
+    </body>
+</html>
