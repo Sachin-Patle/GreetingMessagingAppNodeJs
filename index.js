@@ -81,12 +81,12 @@ app.post('/save_greeting', function (req, res) {
 
 /**
  * @method
- * @url - /edit_greeting
+ * @url - /update_greeting
  * @description
  * Updating data into mongoose model by post menthod and using URl
  * and checking through ObjectId of document
  */
-app.post('/edit_greeting', function (req, res) {
+app.put('/update_greeting', function (req, res) {
     //Getting values and storing in variables
     var name = req.body.name;
     var message = req.body.message;

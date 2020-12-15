@@ -18,7 +18,7 @@ $( document ).ready(function() {
     $("#form_edit").submit(function(event) {
         // Prevent the form from submitting via the browser.
         event.preventDefault();
-        edit_greeting();
+        update_greeting();
         get_greetings();
     });
 
@@ -89,18 +89,18 @@ $( document ).ready(function() {
         });
     }
     /**
-     * @method - edit_greeting
+     * @method - update_greeting
      * @description
      * Method to update greeting details
      * Getting form data by form id and updating changes according to ObjectId by using ajax
      */
-    function edit_greeting()
+    function update_greeting()
     {
         var form_data = jQuery('#form_edit').serialize();
         
         $.ajax({
-            url:"/edit_greeting",
-            method: "POST",
+            url:"/update_greeting",
+            method: "PUT",
             data : form_data,
             success : function (data) {
                 $("#form_edit")[0].reset();
@@ -114,7 +114,7 @@ $( document ).ready(function() {
     }
 
     /**
-     * @method - edit_greeting
+     * @method - update_greeting
      * @description
      * Method to update greeting details
      * Deleting greeting details according to ObjectId by using ajax
